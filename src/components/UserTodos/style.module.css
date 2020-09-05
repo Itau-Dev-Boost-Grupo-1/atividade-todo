@@ -6,3 +6,7 @@
 .cardTitle {
   text-transform: uppercase;
 }
+
+.cardDone {
+  background-color: #58d358;
+}

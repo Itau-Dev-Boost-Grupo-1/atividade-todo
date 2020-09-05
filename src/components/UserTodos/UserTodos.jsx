@@ -8,6 +8,7 @@ import { getUserTodos } from '../../services/todos';
 
 function UserTodos(props) {
   const [todos, setTodos] = useState([]);
+  const [finish, setFinish] = useState(false);
 
   useEffect(() => {
 
@@ -17,11 +18,32 @@ function UserTodos(props) {
 
   }, [props.userId])
 
+  useEffect(()=> {
+    if (finish) {
+      let doing = []
+      
+      for (const todo of todos) {
+        if (!todo.completed) {
+          console.log(todo.completed === false, todo.id)
+          doing.push(todo)
+        }
+      }
+
+      setTodos(doing)
+    }
+
+    return () => setFinish(false)
+  }, [finish])
+
+  console.log(todos)
   return (
     <div>
+      <div>
+        <button className="btn btn-primary" onClick={() => setFinish(true)}>Concluir tarefas</button>
+      </div>
       {
-        todos.map((todo, i) => (<Todo key={i} data={todo} />))
-      }      
+        todos.map((todo, i) => (<Todo key={i} data={todo} setTodoStatus={(status) => todo.completed = status} />))
+      }
     </div>
   )
 }
