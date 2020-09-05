@@ -1,6 +1,9 @@
 .cardContainer {
-  width: 400px;
+  width: 300px;
   margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 3rem;
 }
 
 .cardTitle {

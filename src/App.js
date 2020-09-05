@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="container app">
         <header>
-          <h1>TODO Masters</h1>
+          <h1 className="row justify-content-center">TODO Masters</h1>
         </header>
 
       <Users />

@@ -33,7 +33,7 @@ function UserTodos(props) {
     }
 
     return () => setFinish(false)
-  }, [finish])
+  }, [finish, todos])
 
   console.log(todos)
   return (
