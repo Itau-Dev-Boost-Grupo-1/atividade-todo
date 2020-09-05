@@ -10,7 +10,8 @@ function Todo(props) {
   const [completed, setCompleted] =  useState(data.completed)
 
   useEffect(() => {
-    setTodoStatus(completed)
+
+    setTodoStatus((completed))
   }, [completed, setTodoStatus])
 
   return (
