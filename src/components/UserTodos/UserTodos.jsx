@@ -38,12 +38,17 @@ function UserTodos(props) {
   console.log(todos)
   return (
     <div>
-      <div>
-        <button className="btn btn-primary" onClick={() => setFinish(true)}>Concluir tarefas</button>
+      <div className="row">
+        <div className="col">
+          <button className="btn btn-primary" onClick={() => setFinish(true)}>Concluir tarefas</button>
+        </div>
       </div>
+      <div className="row">
       {
         todos.map((todo, i) => (<Todo key={i} data={todo} setTodoStatus={(status) => { todo.completed = status }} />))
       }
+      </div>
+
     </div>
   )
 }
