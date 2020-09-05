@@ -25,7 +25,7 @@ function UserTodos(props) {
       
       for (const todo of todos) {
         if (!todo.completed) {
-          console.log(todo.completed === false, todo.id)
+
           doing.push(todo)
         }
       }
@@ -38,7 +38,6 @@ function UserTodos(props) {
 
 
   function setTodoStatus (id, status) {
-
     let markedTodos = todos.map((todo, i) => {
       if (todo.id === id) {
         todo.completed = status
@@ -50,7 +49,6 @@ function UserTodos(props) {
     setTodos(markedTodos)
   }
 
-  console.log(todos)
   return (
     <div>
       <div className="row">

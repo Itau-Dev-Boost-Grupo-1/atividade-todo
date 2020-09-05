@@ -7,25 +7,23 @@ import classes from './style.module.css'
 
 function Todo(props) {
   const { data, setTodoStatus} = props
-  const [completed, setCompleted] =  useState(data.completed)
 
-  // useEffect(() => {
-
-  //   setTodoStatus(data.id, completed)
-  // }, [completed, data.id, setTodoStatus])
+  function changeStatus(id, status) {
+    setTodoStatus(id, status)
+  }
 
   return (
     <div className={classes.cardContainer}>
-      <div className={`card ${completed? 'border-success bg-success' : 'border-warning bg-warning'}`} data-id={data.id}>
+      <div className={`card ${data.completed? 'border-success bg-success' : 'border-warning bg-warning'}`} data-id={data.id}>
         <div className="card-body">
           <p className={classes.cardTitle}>{data.title}</p>
           {/* <input type="checkbox" id="status" name="status" /> */}
-          
-          <button className="btn btn-success" onClick={() => setCompleted(true)}>
+
+          <button className="btn btn-success" onClick={() => changeStatus(data.id, true)}>
             <span>DONE</span>
           </button>
           {" "}
-          <button className="btn btn-warning" onClick={() => setCompleted(false)}>
+          <button className="btn btn-warning" onClick={() => changeStatus(data.id, false)}>
             <span>DOING</span>
           </button>
         </div>
