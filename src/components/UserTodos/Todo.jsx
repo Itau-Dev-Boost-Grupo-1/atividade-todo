@@ -9,10 +9,10 @@ function Todo(props) {
   const { data, setTodoStatus} = props
   const [completed, setCompleted] =  useState(data.completed)
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    setTodoStatus((completed))
-  }, [completed, setTodoStatus])
+  //   setTodoStatus(data.id, completed)
+  // }, [completed, data.id, setTodoStatus])
 
   return (
     <div className={classes.cardContainer}>

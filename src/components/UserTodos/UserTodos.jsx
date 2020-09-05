@@ -9,6 +9,7 @@ import { getUserTodos } from '../../services/todos';
 function UserTodos(props) {
   const [todos, setTodos] = useState([]);
   const [finish, setFinish] = useState(false);
+  const [marked, setMarked] = useState([]);
 
   useEffect(() => {
 
@@ -35,6 +36,20 @@ function UserTodos(props) {
     return () => setFinish(false)
   }, [finish, todos])
 
+
+  function setTodoStatus (id, status) {
+
+    let markedTodos = todos.map((todo, i) => {
+      if (todo.id === id) {
+        todo.completed = status
+      }
+
+      return todo
+    })
+
+    setTodos(markedTodos)
+  }
+
   console.log(todos)
   return (
     <div>
@@ -46,7 +61,7 @@ function UserTodos(props) {
       <div className="row">
 
         {
-         todos.map((todo, i) => (<Todo key={i} data={todo} setTodoStatus={(status) => { todo.completed = status }} />))
+         todos.map((todo, i) => (<Todo key={i} data={todo} setTodoStatus={setTodoStatus} />))
         }
 
       </div>
