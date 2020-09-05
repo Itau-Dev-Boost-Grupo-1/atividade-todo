@@ -2,9 +2,15 @@ import React from 'react'
 
 import Users from './components/Users/Users'
 
+import './index.css'
+
 function App() {
   return (
-    <div className="container">
+    <div className="container app">
+        <header>
+          <h1>TODO Masters</h1>
+        </header>
+
       <Users />
     </div>
   )

@@ -25,19 +25,24 @@ function Users(){
     }
 
     return (
-        <div className="container">
-            <h1 className={classes.title}>Lista de todos</h1>
-            <select className={classes.select__user} onChange={(e) => handleChange(e)}>
-                <option value selected disabled>Selecione um Id</option>
-                {users.map((user, index) => (
-                    <option key={index} value={user.id}>Usuário: {user.id}</option>
-                )
-                )}
-            </select>
-            <div className='card-deck'>
+        <>
+        <div className="row">
+            <div className="col-6 mt-3">
+              <select className="form-control" defaultValue="0" onChange={(e) => handleChange(e)}>
+                  <option value="0" disabled>Selecione um Id</option>
+                  {users.map((user, index) => (
+                      <option key={index} value={user.id}>Usuário: {user.id}</option>
+                  )
+                  )}
+              </select>
+            </div>
+        </div>
+        <div>
+            <div className="card-deck col mt-5">
                 <UserTodos userId={userId} />
             </div>
         </div>
+        </>
     )
 }
 
