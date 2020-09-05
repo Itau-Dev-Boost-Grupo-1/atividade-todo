@@ -1,11 +1,11 @@
 import React from 'react'
 
-import UserTodos from './components/UserTodos/UserTodos'
+import Users from './components/Users/Users'
 
 function App() {
   return (
     <div className="App">
-      <UserTodos userId={"1"} />
+      <Users />
     </div>
   )
 }
