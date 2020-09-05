@@ -4,7 +4,7 @@ import UserTodos from './components/UserTodos/UserTodos'
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <UserTodos userId={"1"} />
     </div>
   )
