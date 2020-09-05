@@ -1,0 +1,8 @@
+.cardContainer {
+  width: 400px;
+  margin: 10px;
+}
+
+.cardTitle {
+  text-transform: uppercase;
+}

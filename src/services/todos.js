@@ -1,11 +1,10 @@
 import axios from "axios"
+import { queryAllByDisplayValue } from "@testing-library/react"
 
 const TODOS_BASE_URL = "https://jsonplaceholder.typicode.com"
 
 export const getUsers = async () => {
-  const resp = await axios.get(`${TODOS_BASE_URL}/users`)
-
-  return resp
+  return axios.get(`${TODOS_BASE_URL}/users`)
 }
 
 export const getUserById = async (id = 0) => {
@@ -14,10 +13,8 @@ export const getUserById = async (id = 0) => {
 
     return []
   }
-
-  const resp = await axios.get(`${TODOS_BASE_URL}/users/${id}`)
-
-  return resp
+  
+  return axios.get(`${TODOS_BASE_URL}/users/${id}`)
 }
 
 export const getUserTodos = async (userID = 0) => {
@@ -27,8 +24,6 @@ export const getUserTodos = async (userID = 0) => {
     return []
   }
 
-  const resp = await axios.get(`${TODOS_BASE_URL}/users/${userID}/todos`)
-
-  return resp
+  return axios.get(`${TODOS_BASE_URL}/users/${userID}/todos`)
 }
 
