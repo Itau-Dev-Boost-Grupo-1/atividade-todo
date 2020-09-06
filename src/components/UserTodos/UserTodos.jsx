@@ -53,7 +53,12 @@ function UserTodos(props) {
     <div>
       <div className="row">
         <div className="col mb-3">
-          <button className="btn btn-primary" onClick={() => setFinish(true)}>Concluir tarefas</button>
+          {
+            (todos.length > 0)
+            ? <button className="btn btn-outline-primary" onClick={() => setFinish(true)} >Concluir Tarefas</button>
+            : "" 
+          }
+          
         </div>
       </div>
       <div className="row">

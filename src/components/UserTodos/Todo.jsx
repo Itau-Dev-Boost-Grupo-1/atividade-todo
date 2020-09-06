@@ -14,7 +14,7 @@ function Todo(props) {
 
   return (
     <div className={classes.cardContainer}>
-      <div className={`card ${data.completed? 'border-success bg-success' : 'border-warning bg-warning'}`} data-id={data.id}>
+      <div className={`card ${data.completed? 'todo-done' : 'todo-doing'}`} data-id={data.id}>
         <div className="card-body">
           <p className={classes.cardTitle}>{data.title}</p>
           {/* <input type="checkbox" id="status" name="status" /> */}

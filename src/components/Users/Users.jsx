@@ -28,7 +28,7 @@ function Users(){
         <>
         <div className="row justify-content-center">
             <div className="col-6 mt-3">
-              <select className="form-control" defaultValue="0" onChange={(e) => handleChange(e)}>
+              <select className="form-control input-users" defaultValue="0" onChange={(e) => handleChange(e)}>
                   <option value="0" disabled>Selecione um Id</option>
                   {users.map((user, index) => (
                       <option key={index} value={user.id}>Usuário: {user.id}</option>
